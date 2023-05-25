@@ -1,14 +1,9 @@
-<script>
+<!-- <script>
     import {store} from '../data/store'
 
     export default {
         name: "AppHeader",
         searchText: "",
-        methods: {
-            clickBtn() {
-                this.$emit('myEvent')
-            }
-        }
     }
 </script>
 
@@ -26,4 +21,4 @@
             </div>
         </div>
     </div>
-</template>
+</template> -->

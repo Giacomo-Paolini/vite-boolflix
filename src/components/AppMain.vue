@@ -1,11 +1,10 @@
-<script>
+<!-- <script>
     import {store} from '../data/store'
 
     export default {
         name: "AppMain",
         data() {
             return {
-                store,
             }
         },
     }
@@ -16,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="my-card">
-                    {{ this.store.searchMovieApi }}
+                    <img src="this.movie" alt="">
                 </div>
             </div>
         </div>
@@ -28,4 +27,4 @@
     width: 20rem;
     height: 25rem;
 }
-</style>
+</style> -->
