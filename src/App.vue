@@ -50,7 +50,7 @@ export default {
                 <div class="d-flex flex-wrap justify-content-between p-2">
                     <h1>BOOLFIX</h1>
                     <div>
-                        <input type="search" v-model="searchFilter">
+                        <input @keyup.enter="search" type="search" v-model="searchFilter">
                         <button @click="search">Search</button>
                     </div>
                 </div>
