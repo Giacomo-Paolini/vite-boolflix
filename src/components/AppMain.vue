@@ -29,50 +29,53 @@
 </script>
 
 <template>
-    <div class="container-fluid">
-        <div class="container mt-3">
-            <div class="row">
-                <h2>MOVIES</h2>
-                <div class="my-card d-flex flex-column" v-for="movie in this.store.movies">
-                    <template v-if="movie.poster_path == null">
-                        <img src="https://img.freepik.com/premium-vector/glitch-background-with-tv-noise-texture-no-signal-label-attention-sign-triangular-frame_167184-570.jpg" class="placeholder" alt="">
-                    </template>
-                    <template v-else>
-                        <img :src="store.imageURL + movie.poster_path">
-                    </template>
-                    <div>
-                        <h2>{{ movie.title }}</h2>
-                        <p>{{ movie.original_title }}</p>
-                        <span class="flags" :class="getFlags(movie.original_language)"></span><br>
+    <main>
+
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <h2 class="mt-3">MOVIES</h2>
+                    <div class="my-card d-flex flex-column" v-for="movie in this.store.movies">
+                        <template v-if="movie.poster_path == null">
+                            <img src="https://img.freepik.com/premium-vector/glitch-background-with-tv-noise-texture-no-signal-label-attention-sign-triangular-frame_167184-570.jpg" class="placeholder" alt="">
+                        </template>
+                        <template v-else>
+                            <img :src="store.imageURL + movie.poster_path">
+                        </template>
                         <div>
-                            <i v-for="index in Math.round(movie.vote_average / 2)" :key="index" class="fa-solid fa-star my-4"></i>
-                            <i v-for="index in 5 - (Math.round(movie.vote_average / 2))" :key="index" class="fa-regular fa-star my-4"></i>
+                            <h2>{{ movie.title }}</h2>
+                            <p>{{ movie.original_title }}</p>
+                            <span class="flags" :class="getFlags(movie.original_language)"></span><br>
+                            <div>
+                                <i v-for="index in Math.round(movie.vote_average / 2)" :key="index" class="fa-solid fa-star my-4"></i>
+                                <i v-for="index in 5 - (Math.round(movie.vote_average / 2))" :key="index" class="fa-regular fa-star my-4"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <h2>TV SERIES</h2>
-                <div class="my-card d-flex flex-column" v-for="serie in this.store.tvSeries">
-                    <template v-if="serie.poster_path == null">
-                        <img src="https://img.freepik.com/premium-vector/glitch-background-with-tv-noise-texture-no-signal-label-attention-sign-triangular-frame_167184-570.jpg" class="placeholder" alt="">
-                    </template>
-                    <template v-else>
-                        <img :src="store.imageURL + serie.poster_path">
-                    </template>
-                    <div>
-                        <h2>{{ serie.name }}</h2>
-                        <p>{{ serie.original_name }}</p>
-                        <span :class="getFlags(serie.original_language)"></span><br>
+                <div class="row">
+                    <h2>TV SERIES</h2>
+                    <div class="my-card d-flex flex-column" v-for="serie in this.store.tvSeries">
+                        <template v-if="serie.poster_path == null">
+                            <img src="https://img.freepik.com/premium-vector/glitch-background-with-tv-noise-texture-no-signal-label-attention-sign-triangular-frame_167184-570.jpg" class="placeholder" alt="">
+                        </template>
+                        <template v-else>
+                            <img :src="store.imageURL + serie.poster_path">
+                        </template>
                         <div>
-                            <i v-for="index in Math.round(serie.vote_average / 2)" :key="index" class="fa-solid fa-star my-4"></i>
-                            <i v-for="index in 5 - (Math.round(serie.vote_average / 2))" :key="index" class="fa-regular fa-star my-4"></i>
+                            <h2>{{ serie.name }}</h2>
+                            <p>{{ serie.original_name }}</p>
+                            <span :class="getFlags(serie.original_language)"></span><br>
+                            <div>
+                                <i v-for="index in Math.round(serie.vote_average / 2)" :key="index" class="fa-solid fa-star my-4"></i>
+                                <i v-for="index in 5 - (Math.round(serie.vote_average / 2))" :key="index" class="fa-regular fa-star my-4"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped>
@@ -92,5 +95,10 @@ img {
 
 .placeholder {
     object-fit: cover;
+}
+
+main {
+    background-color: #434242;
+    color: white;
 }
 </style>

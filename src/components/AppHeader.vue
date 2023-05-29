@@ -52,11 +52,11 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <div class="d-flex flex-wrap justify-content-between p-2">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center p-2">
                         <h1>BOOLFIX</h1>
                         <div>
                             <input @keyup.enter="this.movieLoaded(), this.seriesLoaded()" type="search" v-model="searchFilter" placeholder="Search">
-                            <button @click="this.movieLoaded(), this.seriesLoaded()">Search</button>
+                            <button class="ms-2" @click="this.movieLoaded(), this.seriesLoaded()">Search</button>
                         </div>
                     </div>
                 </div>
@@ -64,3 +64,10 @@
         </div>
     </header>
 </template>
+
+<style scoped>
+header {
+    background-color: black;
+    color: red;
+}
+</style>
